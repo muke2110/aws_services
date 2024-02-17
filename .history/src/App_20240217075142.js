@@ -1,8 +1,8 @@
 // App.js
-import './App.css'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Amplify } from 'aws-amplify';
+import { Auth } from 'aws-amplify'; // Import Auth from aws-amplify
 
 import awsconfig from './aws-exports';
 import Login from './component/Login';
@@ -13,18 +13,26 @@ Amplify.configure(awsconfig);
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Function to update authentication state
-  const updateAuthStatus = (status) => {
-    setIsAuthenticated(status);
-  };
+  useEffect(() => {
+    checkAuthStatus();
+  }, []);
+
+  async function checkAuthStatus() {
+    try {
+      await Auth.currentAuthenticatedUser();
+      setIsAuthenticated(true);
+    } catch (error) {
+      setIsAuthenticated(false);
+    }
+  }
 
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Login updateAuthStatus={updateAuthStatus} />} />
+          <Route path="/" element={<Login />} />
           <Route
-            path="/dashboard"
+            path="/dashboard" 
             element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />}
           />
         </Routes>
@@ -32,5 +40,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

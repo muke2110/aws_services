@@ -1,13 +1,11 @@
 // Login.js
-import './Login.css'
+import "./Login.css";
 import React, { useState } from 'react';
 import { signIn } from 'aws-amplify/auth';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
-const Login = ({ updateAuthStatus }) => {
+const Login = ({ onAuthentication }) => { // Receive onAuthentication prop
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -16,9 +14,9 @@ const Login = ({ updateAuthStatus }) => {
         throw new Error('Username and password are required.');
       }
       const user = await signIn({ username, password });
+      alert("User Logged In");
       console.log('Successfully logged in:', user);
-      updateAuthStatus(true); // Update authentication status
-      navigate('/dashboard'); // Redirect to dashboard upon successful login
+      onAuthentication(true); // Call onAuthentication with true upon successful login
 
     } catch (error) {
       alert("User Not Found");
