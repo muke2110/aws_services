@@ -4,25 +4,24 @@ import { getCurrentUser, signOut } from 'aws-amplify/auth';
 
 const Dashboard = () => {
   const [username, setUsername] = useState('');
-  const [loading, setLoading] = useState(true); // Add loading state
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCurrentUser = async () => {
       try {
         const user = await getCurrentUser();
-        console.log(user);
-        setUsername(user.username);
+        if (!user) {
+          navigate('/'); // Redirect to sign-in page if not authenticated
+        } else {
+          setUsername(user.username);
+        }
       } catch (err) {
-        console.log('User is not authenticated. Redirecting to sign-in page.');
-        handleSignOut();
-      } finally {
-        setLoading(false); // Set loading to false regardless of success or failure
+        console.log(err);
       }
     };
-  
+
     fetchCurrentUser();
-  }, []); // Empty dependency array ensures this effect runs only once, when the component mounts
+  }, [navigate]);
 
   const handleSignOut = async () => {
     try {
@@ -34,14 +33,9 @@ const Dashboard = () => {
     }
   };
 
-  if (loading) {
-    return <div>Loading...</div>; // Render loading state
-  }
-
   return (
     <div className="dashboard">
       <h1>Hello, {username}</h1>
-      <h3>This is Dashboard</h3>
       <button onClick={handleSignOut} className="sign-out-btn">Sign out</button>
     </div>
   );

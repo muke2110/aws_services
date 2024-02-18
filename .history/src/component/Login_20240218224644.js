@@ -25,6 +25,7 @@ const Login = () => {
           left: 0,
           width: "100%",
           height: "100%",
+          backgroundImage: `url('https://i.ytimg.com/vi/TSGnWlGmSds/maxresdefault.jpg')`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
