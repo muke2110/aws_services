@@ -33,8 +33,6 @@ amplify/backend/.temp
 build/
 dist/
 node_modules/
-awsconfig
-core.ignorecase false
 aws-exports.js
 awsconfiguration.json
 amplifyconfiguration.json
