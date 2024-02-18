@@ -1,7 +1,8 @@
+// Registration.js
 import React, { useState } from 'react';
 import { signUp } from 'aws-amplify/auth';
 
-const RegistrationForm = () => {
+const Registration = () => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -56,4 +57,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default Registration;
