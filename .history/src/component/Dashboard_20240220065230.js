@@ -17,7 +17,7 @@ const Dashboard = () => {
         console.log('User is not authenticated. Redirecting to sign-in page.');
         handleSignOut();
       } finally {
-        setLoading(false); 
+        setLoading(false); // Set loading to false regardless of success or failure
       }
     };
   

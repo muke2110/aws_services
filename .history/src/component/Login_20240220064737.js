@@ -23,7 +23,7 @@ const Login = () => {
             {handleAuthSuccess}
           </Authenticator>
         </div>
-    </>
+      </>
   );
   
 };
