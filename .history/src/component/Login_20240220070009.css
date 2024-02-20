@@ -10,13 +10,3 @@
   background-position: center;
   z-index: -1; /* Send the background image to the back */
 }
-
-.login-container {
-  position: fixed; /* Change position to fixed */
-  top: 50%;
-  left: 45%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  padding: 20px;
-  border-radius: 5px;
-}

@@ -12,11 +12,10 @@
 }
 
 .login-container {
-  position: fixed; /* Change position to fixed */
-  top: 50%;
-  left: 45%;
-  transform: translate(-50%, -50%);
   width: 300px;
+  margin: 100px auto; /* Adjust this value as needed to center the login container vertically */
   padding: 20px;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background to the login container */
 }
