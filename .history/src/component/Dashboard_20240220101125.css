@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import { getCurrentUser, signOut } from 'aws-amplify/auth';
 import './Dashboard.css'; // Import your CSS file for styling
 
@@ -22,7 +22,7 @@ const Dashboard = () => {
     };
 
     fetchCurrentUser();
-  });
+  }, []);
 
   const handleSignOut = async () => {
     try {
