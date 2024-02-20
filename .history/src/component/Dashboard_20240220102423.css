@@ -1,0 +1,67 @@
+/* Dashboard.css */
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height of viewport */
+  }
+  
+  .dashboard-header {
+    background-color: #007bff; /* Example color from AWS Amplify UI theme */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+  
+  .dashboard-header .sign-out-btn {
+    background-color: #dc3545; /* Example color from AWS Amplify UI theme */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dashboard-header .sign-out-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .dashboard-sidebar {
+    flex: 0 0 250px; /* Fixed width sidebar */
+    background-color: #f8f9fa; /* Example color from AWS Amplify UI theme */
+    padding: 20px;
+  }
+  
+  .dashboard-main {
+    flex: 1; /* Take remaining space */
+    padding: 20px;
+  }
+  
+  .dashboard-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-content p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .loader {
+    text-align: center;
+    padding: 20px;
+  }
+  

@@ -22,7 +22,7 @@ const Dashboard = () => {
     };
 
     fetchCurrentUser();
-  });
+  }, []);
 
   const handleSignOut = async () => {
     try {
