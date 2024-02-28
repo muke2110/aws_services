@@ -129,5 +129,12 @@
         }
       ]
     }
+  },
+  "storage": {
+    "fileexample": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
   }
 }

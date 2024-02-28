@@ -30,6 +30,9 @@
           "deploymentBucketName": "amplify-logintest-dev-195337-deployment",
           "s3Key": "amplify-builds/logintest17a444f5VerifyAuthChallengeResponse-2b47716f4243666e7733-build.zip"
         }
+      },
+      "storage": {
+        "fileexample": {}
       }
     }
   }
