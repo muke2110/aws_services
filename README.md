@@ -95,6 +95,9 @@ The project is configured for AWS Amplify deployment. Push your changes, and Amp
 
 Contributions are welcome! Fork the repository and submit a pull request. 🚀
 
+## 📜 License
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
 ## 📞 Contact
 
 For questions or suggestions, reach out to **Mukesh Nagineni** at [mukesh.nagineni@gmail.com](mailto:mukesh.nagineni@gmail.com).
